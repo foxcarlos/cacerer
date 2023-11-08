@@ -3,5 +3,5 @@
 from odoo import models, fields, api
 
 
-class SaleOrder(models.Model):
+class ResPartner(models.Model):
     _inherit = "res.partner"

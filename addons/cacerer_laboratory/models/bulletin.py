@@ -35,7 +35,7 @@ class LaboratoryAnalysis(models.Model):
     _description = "Laboratory Test"
 
     name = fields.Char("Test Name", required=True)
-    product_id = fields.Many2one("product.template", string="Product")
+    product_id = fields.Many2one("product.product", string="Product")
     bulletin_id = fields.Many2one("laboratory.bulletin", string="Bulletin")
     results_ids = fields.One2many(
         "laboratory.analysis.result", "test_id", string="Results"
@@ -56,7 +56,7 @@ class LaboratoryAnalysisResult(models.Model):
     manual_result = fields.Char("Manual Result")
     # computed_result = fields.Float('Computed Result', compute='_compute_result')
 
-    @api.depends("variable_name", "value", "test_id.formula")
+    @api.depends("variable_name", "value")
     def _compute_result(self):
         """Compute the result based on the variable and formula
         This is a placeholder for actual formula calculation logic

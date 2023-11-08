@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 
 class ProductTemplate(models.Model):
-    _inherit = "product.template"
+    _inherit = "product.product"
 
     laboratory_ids = fields.Many2many(
         "laboratory.laboratory",  # nombre del modelo al que se relaciona
