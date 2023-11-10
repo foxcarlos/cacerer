@@ -1,0 +1,46 @@
+<odoo>
+  <data>
+	<!-- Bulletin List-->
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="cacerer_laboratory.bulletin_list">
+      <field name="name">cacerer_laboratory bulletin list</field>
+	  <field name="model">laboratory.bulletin</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="reception_date"/>
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>
+	
+ 
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="cacerer_laboratory.bulletin_action_window">
+      <field name="name">Listado de Bulletines</field>
+      <field name="res_model">laboratory.bulletin</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Cacerer laboratory" id="cacerer_laboratory.menu_root" action="cacerer_laboratory.bulletin_action_window"/>
+
+
+    <!-- menu categories -->
+
+	<menuitem name="Bulletines" id="cacerer_laboratory.bulletin_menu"  parent="cacerer_laboratory.menu_root" action="cacerer_laboratory.bulletin_action_window"/>
+
+	<!--
+		<menuitem name="Bulletin" id="cacerer_laboratory.bulletin_menu" parent="cacerer_laboratory.menu_root" >
+				-->		
+
+    <!-- actions -->
+	<!--
+    <menuitem name="cacerer_laboratory_List" id="cacerer_laboratory.menu_list" parent="cacerer_laboratory.menu_1"
+		action="cacerer_laboratory.action_window"/>
+    -->
+  </data>
+</odoo>

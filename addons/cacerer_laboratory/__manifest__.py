@@ -10,8 +10,9 @@
     "depends": ["base", "sale", "contacts"],
     # always loaded
     "data": [
-        # 'security/ir.model.access.csv',
-        # "views/views.xml",
+        "security/ir.model.access.csv",
+        "views/BulletinView.xml",
+        "views/LaboratoryView.xml",
         # "views/templates.xml",
     ],
     # only loaded in demonstration mode

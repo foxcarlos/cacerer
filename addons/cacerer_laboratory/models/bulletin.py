@@ -38,7 +38,7 @@ class LaboratoryAnalysis(models.Model):
     product_id = fields.Many2one("product.product", string="Product")
     bulletin_id = fields.Many2one("laboratory.bulletin", string="Bulletin")
     results_ids = fields.One2many(
-        "laboratory.analysis.result", "test_id", string="Results"
+        "laboratory.analysis.result", "analysis_id", string="Results"
     )
     normal_range = fields.Char(
         "Normal Range"

@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_/users/foxcarlos/desarrollo/python/odoo_proyectos/cacerer/addons/cacerer_laboratory_/users/foxcarlos/desarrollo/python/odoo_proyectos/cacerer/addons/cacerer_laboratory,/users/foxcarlos/desarrollo/python/odoo_proyectos/cacerer/addons/cacerer_laboratory./users/foxcarlos/desarrollo/python/odoo_proyectos/cacerer/addons/cacerer_laboratory,model_/users/foxcarlos/desarrollo/python/odoo_proyectos/cacerer/addons/cacerer_laboratory_/users/foxcarlos/desarrollo/python/odoo_proyectos/cacerer/addons/cacerer_laboratory,base.group_user,1,1,1,1
+cacerer_laboratory.access_laboratory_laboratory,access_laboratory_laboratory,cacerer_laboratory.model_laboratory_laboratory,base.group_user,1,1,1,True
+cacerer_laboratory.access_laboratory_bulletin,access_laboratory_bulletin,cacerer_laboratory.model_laboratory_bulletin,base.group_user,1,1,1,True
+cacerer_laboratory.access_laboratory_analysis,access_laboratory_analysis,cacerer_laboratory.model_laboratory_analysis,base.group_user,1,1,1,True
+cacerer_laboratory.access_laboratory_analysis_result,access_laboratory_analysis_result,cacerer_laboratory.model_laboratory_analysis_result,base.group_user,1,1,1,True
