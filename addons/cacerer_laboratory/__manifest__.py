@@ -11,8 +11,9 @@
     # always loaded
     "data": [
         "security/ir.model.access.csv",
-        "views/BulletinView.xml",
-        "views/LaboratoryView.xml",
+        "views/bulletin_view.xml",
+        "views/menues_view.xml",
+        "views/laboratory_view.xml",
         # "views/templates.xml",
     ],
     # only loaded in demonstration mode

@@ -17,7 +17,9 @@ class Bulletin(models.Model):
     partner_id = fields.Many2one("res.partner", string="Client")
     sale_order_id = fields.Many2one("sale.order", string="Sale Order")
     reception_date = fields.Datetime("Reception Date", default=fields.Datetime.now)
-    analysis_ids = fields.One2many("laboratory.analysis", "bulletin_id", string="Tests")
+    analysis_ids = fields.One2many(
+        "laboratory.analysis", "bulletin_id", string="Analysis"
+    )
     state = fields.Selection(
         [
             ("new", "New"),
@@ -28,37 +30,3 @@ class Bulletin(models.Model):
         string="Status",
         default="new",
     )
-
-
-class LaboratoryAnalysis(models.Model):
-    _name = "laboratory.analysis"
-    _description = "Laboratory Test"
-
-    name = fields.Char("Test Name", required=True)
-    product_id = fields.Many2one("product.product", string="Product")
-    bulletin_id = fields.Many2one("laboratory.bulletin", string="Bulletin")
-    results_ids = fields.One2many(
-        "laboratory.analysis.result", "analysis_id", string="Results"
-    )
-    normal_range = fields.Char(
-        "Normal Range"
-    )  # This could be a more complex type depending on the requirements
-    is_alert = fields.Boolean("Alert", compute="_compute_alert")
-
-
-class LaboratoryAnalysisResult(models.Model):
-    _name = "laboratory.analysis.result"
-    _description = "Laboratory Analysis Result"
-
-    analysis_id = fields.Many2one("laboratory.analysis", string="Analysis")
-    variable_name = fields.Char("Variable")
-    value = fields.Float("Value")
-    manual_result = fields.Char("Manual Result")
-    # computed_result = fields.Float('Computed Result', compute='_compute_result')
-
-    @api.depends("variable_name", "value")
-    def _compute_result(self):
-        """Compute the result based on the variable and formula
-        This is a placeholder for actual formula calculation logic
-        """
-        pass
